@@ -1,0 +1,39 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-07-01 16:06:52.705250",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-02 16:09:40.002005",
+ "modified_by": "Administrator",
+ "module": "Server Side2",
+ "name": "sales order along with their sales invoice if it exists",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    so.name AS \"Sales Order:Link/Sales Order:120\",\r\n    so.customer_name AS \"Customer::150\",\r\n    soi.item_code AS \"Item Code:Link/Item:120\",\r\n    soi.item_name AS \"Item Name::200\",\r\n    soi.qty AS \"Qty:Float:100\",\r\n    soi.rate AS \"Rate:Currency:100\",\r\n    soi.amount AS \"Amount:Currency:120\",\r\n    si.name AS \"Sales Invoice:Link/Sales Invoice:120\",\r\n    sii.qty AS \"Invoice Qty:Float:100\",\r\n    sii.rate AS \"Invoice Rate:Currency:100\",\r\n    sii.amount AS \"Invoice Amount:Currency:120\"\r\nFROM\r\n    `tabSales Order` so\r\nJOIN\r\n    `tabSales Order Item` soi ON so.name = soi.parent\r\nLEFT JOIN\r\n    `tabSales Invoice Item` sii ON soi.item_code = sii.item_code AND so.name = sii.sales_order\r\nWHERE\r\n    so.docstatus = 1\r\nORDER BY\r\n    so.name ASC,\r\n    soi.item_code ASC\r\n",
+ "ref_doctype": "Sales Order",
+ "report_name": "sales order along with their sales invoice if it exists",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Maintenance User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Stock User"
+  }
+ ]
+}

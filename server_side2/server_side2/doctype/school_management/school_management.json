@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-30 17:35:08.270975",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "student_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "student_data",
+   "fieldtype": "Table",
+   "options": "School Data",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-30 18:00:32.675415",
+ "modified_by": "Administrator",
+ "module": "Server Side2",
+ "name": "School Management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
